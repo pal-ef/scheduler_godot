@@ -79,7 +79,8 @@ func continue_or_unpause() -> void:
 			blocked_process.pause()
 		
 func error_and_terminate_current_process() -> void:
-	process_in_execution.get_child(0).error_and_terminate()
+	if process_in_execution.get_child_count() > 0:
+		process_in_execution.get_child(0).error_and_terminate()
 	
 func return_all_process_nodes():
 	var all_nodes: Array[Node] = []
