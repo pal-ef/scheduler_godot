@@ -1,0 +1,131 @@
+[gd_scene load_steps=3 format=3 uid="uid://cskvi8vwigjqv"]
+
+[ext_resource type="Script" path="res://Scenes/script/table.gd" id="1_8876v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnmcw"]
+bg_color = Color(0, 0.776471, 0.290196, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[node name="Table" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8876v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = -269.0
+offset_right = 534.0
+offset_bottom = 269.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mnmcw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -11.5
+offset_right = 92.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="ID" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "ID"
+horizontal_alignment = 1
+
+[node name="Operation" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "Operation
+"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "TME"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "TL"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "TF"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "TRES"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "TRET"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "TS"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "TE"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "Resultado"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 490)
+layout_mode = 2
+
+[node name="RowContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer2/ScrollContainer"]
+layout_mode = 2

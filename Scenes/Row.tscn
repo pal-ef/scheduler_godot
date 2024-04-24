@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj0df71mkaj1x"]
+
+[ext_resource type="Script" path="res://Scenes/Row.gd" id="1_r5x1v"]
+
+[node name="Row" type="PanelContainer"]
+custom_minimum_size = Vector2(1000, 50)
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 140.0
+offset_top = -25.0
+offset_right = -140.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.998935, 1.01176)
+script = ExtResource("1_r5x1v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="ID" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "NA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Operation" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "NA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TME" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "NA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TL" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "NA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TF" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "NA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TRES" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "NA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TRET" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "NA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TS" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "NA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TE" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "NA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resultado" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "NA"
+horizontal_alignment = 1
+vertical_alignment = 1

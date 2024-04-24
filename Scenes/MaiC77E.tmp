@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=3 uid="uid://bicb3helfx5k7"]
+
+[ext_resource type="Script" path="res://Scenes/script/Main.gd" id="1_rkfrf"]
+[ext_resource type="Theme" uid="uid://6i77j1mvvgk8" path="res://theme.tres" id="2_ybuq3"]
+[ext_resource type="PackedScene" uid="uid://3js4p4nqaiqx" path="res://Scenes/Memory.tscn" id="3_goiy8"]
+[ext_resource type="PackedScene" uid="uid://df8blr10pmsvl" path="res://Scenes/window.tscn" id="4_14h31"]
+[ext_resource type="PackedScene" uid="uid://c6u4u8o4aisuc" path="res://Scenes/queue.tscn" id="4_q7kvt"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_rkfrf")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Memory" parent="UI/Control" instance=ExtResource("3_goiy8")]
+layout_mode = 1
+
+[node name="Label" type="Label" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_top = 39.0
+offset_right = 78.0
+offset_bottom = 174.0
+grow_horizontal = 2
+theme = ExtResource("2_ybuq3")
+theme_override_colors/font_color = Color(0.752941, 0.752941, 0.752941, 1)
+theme_override_font_sizes/font_size = 114
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -115.0
+offset_top = -86.0
+offset_right = 115.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_ybuq3")
+
+[node name="Label" type="Label" parent="UI/Control/Button"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -22.5
+offset_right = 40.5
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ybuq3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "AGREGAR PROCESOS"
+
+[node name="Queue" parent="UI/Control" instance=ExtResource("4_q7kvt")]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 62.0
+offset_top = -257.0
+offset_right = 362.0
+offset_bottom = 257.0
+grow_horizontal = 1
+
+[node name="Window" parent="UI" groups=["memory"] instance=ExtResource("4_14h31")]
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="button_up" from="UI/Control/Button" to="." method="_on_button_button_up"]

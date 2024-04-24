@@ -1,0 +1,41 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Scheduler"
+run/main_scene="res://Scenes/Main.tscn"
+config/features=PackedStringArray("4.2", "Mobile")
+
+[autoload]
+
+GlobalManager="*res://GlobalManager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
+[dotnet]
+
+project/assembly_name="Scheduler"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Resources/": "yellow",
+"res://Scenes/": "green"
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"

@@ -1,0 +1,156 @@
+[gd_scene load_steps=11 format=3 uid="uid://cpae32bi1vgfx"]
+
+[ext_resource type="Theme" uid="uid://6i77j1mvvgk8" path="res://theme.tres" id="1_18rxf"]
+[ext_resource type="Script" path="res://Scenes/script/Process.gd" id="1_t41d5"]
+[ext_resource type="FontFile" uid="uid://ciidhc5leh7h" path="res://Assets/Font/Teko-Regular.ttf" id="2_4i4uq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxxnm"]
+bg_color = Color(0.105882, 0.396078, 0.211765, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6d55"]
+bg_color = Color(0.760784, 0.564706, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttcfp"]
+bg_color = Color(0, 0.729412, 0.388235, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjkys"]
+bg_color = Color(0, 0.376471, 0.188235, 1)
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3s34q"]
+bg_color = Color(0, 0.376471, 0.188235, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqvbd"]
+bg_color = Color(0.930432, 0.46147, 0, 1)
+corner_radius_top_left = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_31tk8"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Process" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_t41d5")
+
+[node name="Control" type="Button" parent="."]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 1
+offset_left = -125.0
+offset_right = 125.0
+offset_bottom = 50.0
+theme = ExtResource("1_18rxf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rxxnm")
+
+[node name="ErrorBackgroundColor" type="PanelContainer" parent="Control"]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00891, 1.02044)
+theme_override_styles/panel = SubResource("StyleBoxFlat_n6d55")
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 251.0
+offset_bottom = 50.0
+scale = Vector2(1.00143, 1)
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ttcfp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_sjkys")
+fill_mode = 1
+show_percentage = false
+
+[node name="BlockedProgressBar" type="ProgressBar" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 251.0
+offset_bottom = 50.0
+scale = Vector2(1.00143, 1)
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_3s34q")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uqvbd")
+value = 50.0
+show_percentage = false
+
+[node name="Panel" type="Panel" parent="Control"]
+z_index = 3
+layout_mode = 0
+offset_left = 61.0
+offset_top = 5.0
+offset_right = 244.0
+offset_bottom = 45.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_31tk8")
+
+[node name="OperationLabel" type="Label" parent="Control"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 59.0
+offset_top = 1.0
+offset_right = -6.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.929412, 0.933333, 0.937255, 1)
+theme_override_fonts/font = ExtResource("2_4i4uq")
+theme_override_font_sizes/font_size = 23
+text = "2 + 2 = ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IDLabel" type="Label" parent="Control"]
+z_index = 3
+layout_mode = 0
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 51.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "54678"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BlockTime" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true

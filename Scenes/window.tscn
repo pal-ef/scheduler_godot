@@ -1,0 +1,131 @@
+[gd_scene load_steps=5 format=3 uid="uid://df8blr10pmsvl"]
+
+[ext_resource type="Theme" uid="uid://6i77j1mvvgk8" path="res://theme.tres" id="1_yrs61"]
+[ext_resource type="Texture2D" uid="uid://ee36e64rhqyq" path="res://Assets/PNG/grey_arrowUpWhite.png" id="2_21s73"]
+[ext_resource type="Script" path="res://Scenes/script/window.gd" id="2_uml5g"]
+[ext_resource type="Texture2D" uid="uid://bgrbr86ktw160" path="res://Assets/PNG/grey_arrowDownWhite.png" id="3_3ulje"]
+
+[node name="Window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yrs61")
+script = ExtResource("2_uml5g")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.815686)
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer/ColorRect/CenterContainer"]
+custom_minimum_size = Vector2(300, 332.41)
+layout_mode = 2
+theme = ExtResource("1_yrs61")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ColorRect/CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 80.09)
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "AGREGA PROCESOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NumberInput" type="HBoxContainer" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput"]
+custom_minimum_size = Vector2(123.575, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "5"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_21s73")
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture_normal = ExtResource("3_3ulje")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "
+"
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/Button/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "CONFIRMAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[connection signal="button_up" from="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput/MarginContainer/VBoxContainer/TextureButton" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput/MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_texture_button_2_button_up"]
+[connection signal="button_up" from="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="finished" from="SFX" to="." method="_on_sfx_finished"]

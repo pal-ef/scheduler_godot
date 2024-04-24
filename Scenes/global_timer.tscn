@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbm0q1ym755oi"]
+
+[ext_resource type="Theme" uid="uid://6i77j1mvvgk8" path="res://theme.tres" id="1_2haun"]
+[ext_resource type="Script" path="res://Scenes/script/global_timer.gd" id="1_fh5q4"]
+
+[node name="GlobalTimer" type="Label"]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 244.0
+offset_bottom = 55.0
+theme = ExtResource("1_2haun")
+theme_override_colors/font_color = Color(0.788235, 0.788235, 0.788235, 1)
+theme_override_font_sizes/font_size = 32
+text = "CONTADOR GLOBAL: 2323"
+script = ExtResource("1_fh5q4")

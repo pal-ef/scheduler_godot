@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6u4u8o4aisuc"]
+
+[ext_resource type="Theme" uid="uid://6i77j1mvvgk8" path="res://theme.tres" id="1_lpv0j"]
+[ext_resource type="Script" path="res://Scenes/script/queue.gd" id="2_mm387"]
+
+[node name="PanelContainer" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lpv0j")
+script = ExtResource("2_mm387")
+metadata/_edit_horizontal_guides_ = [139.0]
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+theme = ExtResource("1_lpv0j")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.996916)
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 11
+theme_override_constants/margin_bottom = 13
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_lpv0j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ProcessContainer" type="VBoxContainer" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 60
+
+[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 57)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0.396078, 0.396078, 0.396078, 0)
