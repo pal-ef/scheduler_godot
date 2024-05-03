@@ -32,10 +32,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -466.0
-offset_top = -269.0
-offset_right = 534.0
-offset_bottom = 269.0
+offset_left = -510.0
+offset_top = -272.0
+offset_right = 578.0
+offset_bottom = 272.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -73,6 +73,12 @@ custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 text = "Operation
 "
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+text = "RESTA"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
@@ -117,7 +123,7 @@ layout_mode = 2
 text = "TE"
 horizontal_alignment = 1
 
-[node name="Label10" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
+[node name="Label11" type="Label" parent="PanelContainer/VBoxContainer2/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 text = "Resultado"

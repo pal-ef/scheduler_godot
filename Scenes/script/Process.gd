@@ -61,6 +61,7 @@ func pause() -> void:
 			stopped = false
 		else:
 			saved_time_left = timer.time_left
+			time_spent_in_execution = asigned_process.time_in_execution - timer.time_left
 			timer.stop()
 			stopped = true
 	else:
@@ -80,6 +81,7 @@ func block() -> void:
 	stopped = true
 
 	saved_time_left = timer.time_left
+	time_spent_in_execution = asigned_process.time_in_execution - timer.time_left
 	timer.stop()
 	progress_bar.visible = false
 	blocked_progress_bar.visible = true
@@ -113,6 +115,11 @@ func return_info_row_format() -> Array[String]:
 	information.append(asigned_process.id)
 	# Operation
 	information.append(asigned_process.operation)
+	# Tiempo restante:
+	if finalization_time.length() > 0:
+		information.append("0")
+	else:
+		information.append(str(asigned_process.time_in_execution - time_spent_in_execution))
 	# TME:
 	information.append(str(asigned_process.time_in_execution))
 	# TL:

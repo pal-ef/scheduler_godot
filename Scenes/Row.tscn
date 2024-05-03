@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Row.gd" id="1_r5x1v"]
 
 [node name="Row" type="PanelContainer"]
-custom_minimum_size = Vector2(1000, 50)
+custom_minimum_size = Vector2(1087.5, 50)
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
@@ -31,6 +31,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Operation" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(85, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "NA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TP" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(85, 0)
 layout_mode = 2
 size_flags_vertical = 1

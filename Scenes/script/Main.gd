@@ -29,7 +29,7 @@ func _input(event):
 					if not is_table_visible: memory.block_current_process() # DONE
 				KEY_W:
 					if not is_table_visible: memory.error_and_terminate_current_process() # DONE
-				KEY_T:
+				KEY_B:
 					if table.visible:
 						memory.continue_or_unpause()
 						table.visible = false
