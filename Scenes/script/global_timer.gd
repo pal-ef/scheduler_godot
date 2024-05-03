@@ -9,7 +9,7 @@ func _ready() -> void:
 func _process(delta):
 	if not paused:
 		time_elapsed += delta
-		text = "CONTADOR GLOBAL:   " + str(int(time_elapsed))
+		text = "CONTADOR GLOBAL:   " + str(int(time_elapsed))+ "\nQUANTUM: " + str(GlobalManager.get_quantum())
 
 func string_snaptime():
 	return str(int(time_elapsed))

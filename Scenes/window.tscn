@@ -36,7 +36,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="PanelContainer/ColorRect/CenterContainer"]
-custom_minimum_size = Vector2(300, 332.41)
+custom_minimum_size = Vector2(300, 550)
 layout_mode = 2
 theme = ExtResource("1_yrs61")
 
@@ -59,7 +59,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(100, 80.09)
 layout_mode = 2
 theme_override_font_sizes/font_size = 44
-text = "AGREGA PROCESOS"
+text = "PROCESOS"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -98,6 +98,53 @@ layout_mode = 2
 texture_normal = ExtResource("3_3ulje")
 stretch_mode = 5
 
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/minimum_grab_thickness = 5
+
+[node name="Label2" type="Label" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 80.09)
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "QUANTUM"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NumberInput2" type="HBoxContainer" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput2"]
+custom_minimum_size = Vector2(123.575, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "5"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput2"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="quantumUp" type="TextureButton" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_21s73")
+stretch_mode = 5
+
+[node name="quantumDown" type="TextureButton" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput2/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture_normal = ExtResource("3_3ulje")
+stretch_mode = 5
+
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
@@ -127,5 +174,7 @@ vertical_alignment = 1
 
 [connection signal="button_up" from="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput/MarginContainer/VBoxContainer/TextureButton" to="." method="_on_texture_button_button_up"]
 [connection signal="button_up" from="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput/MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_texture_button_2_button_up"]
+[connection signal="button_up" from="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput2/MarginContainer/VBoxContainer/quantumUp" to="." method="_on_quantum_up_button_up"]
+[connection signal="button_up" from="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput2/MarginContainer/VBoxContainer/quantumDown" to="." method="_on_quantum_down_button_up"]
 [connection signal="button_up" from="PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/Button" to="." method="_on_button_button_up"]
 [connection signal="finished" from="SFX" to="." method="_on_sfx_finished"]

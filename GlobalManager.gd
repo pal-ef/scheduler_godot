@@ -6,6 +6,7 @@ var required_processes_to_create: int = 0
 var registered_ids = {}
 
 var time: int
+var quantum: int
 
 var memory: Control
 var queue: PanelContainer
@@ -136,3 +137,9 @@ func register_new_global_timer(_timer: Label):
 	
 func pause_global_timer() -> void:
 	global_timer.pause()
+
+func set_quantum(_quantum: int) -> void:
+	quantum = _quantum
+
+func get_quantum() -> int:
+	return quantum

@@ -3,6 +3,9 @@ extends Control
 @onready var numberOfProcessesLabel = $PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput/Label
 @onready var sfx = $SFX
 @export var numberOfProcesses: int = 5
+@onready var quantumNumberLabel = $PanelContainer/ColorRect/CenterContainer/Panel/MarginContainer/VBoxContainer/NumberInput2/Label
+
+var quantum: int = 3
 
 var parent
 var child
@@ -36,6 +39,7 @@ func add_child_to_parent_when_start(_parent, _child):
 # Confirmation button
 func _on_button_button_up():
 	GlobalManager.set_number_of_processes(numberOfProcesses)
+	GlobalManager.set_quantum(quantum)
 	GlobalManager.populate()
 	sfx.stream = SWITCH_2
 	sfx.play()
@@ -45,3 +49,18 @@ func _on_button_button_up():
 func _on_sfx_finished():
 	if sfx.stream == SWITCH_2:
 		queue_free()
+
+func update_quantum_label() -> void:
+	quantumNumberLabel.text = str(quantum)
+
+func _on_quantum_up_button_up():
+	if quantum > 18: return
+	quantum += 1
+	update_quantum_label()
+	sfx.play()
+
+func _on_quantum_down_button_up():
+	if quantum > 1: 
+		quantum -= 1
+		update_quantum_label()
+		sfx.play()
